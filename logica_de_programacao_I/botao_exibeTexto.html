@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando botão para exibir texto!!!</title>
+</head>
+<body>
+    
+    <input/> <!-- Esse comando cria uma caixa de para que o usuário digite informações -->
+    <button>Clique aqui para exibir o texto!!!</button> <!-- Esse comando cria um botão para que ser clicado e sua funcionalidade expecifica seja executada. -->
+    <script>
+        
+        var input = document.querySelector("input");
+        input.focus();// Esse comando faz com que o input.value na página já fique em evidência.
+
+
+        function exibeTexto() {
+            alert(input.value);// Aqui ele exibe na tela o comando capturado pelo input.value.
+            input.value = "";
+            input.focus();
+        }
+
+        var button = document.querySelector("button");
+        button.onclick = exibeTexto;
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluindo números em uma contagem</title>
+</head>
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+        // Nesse programa devo imprimir todos os números de 30 a 40, exceto o 33 e o 37.
+        var numeroInicial = 30;
+        var numeroFinal = 40;
+
+        while(numeroInicial <= numeroFinal) {
+            if(numeroInicial == 33 || numeroInicial == 37) {
+                numeroInicial += 1;
+            } else {
+            escreva(numeroInicial);
+            numeroInicial +=1;
+            }
+        }
+        escreva("FIM!!!")
+    </script>
+</body>
+</html>

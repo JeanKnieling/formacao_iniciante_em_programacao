@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de pontos</title>
+</head>
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+
+        var vitorias = parseInt(prompt("Entre com onúmero de vitórias:"));
+        var empates = parseInt(prompt("Entre com o número de empates:"));
+
+        var pontos = (vitorias * 3) + empates;
+
+        escreva("O total de pontos de seu time foi " + pontos + " pontos.");
+
+        if(pontos > 28) {
+        escreva("O seu time está melhor do que o ano passado!");
+        }
+
+        if(pontos == 28) {
+        escreva("O seu time está igual ao ano passado! ");
+        }
+
+        if(pontos < 28) {
+        escreva("O seu time está pior do que o ano passado!");
+        }
+    </script>
+    
+</body>
+</html>

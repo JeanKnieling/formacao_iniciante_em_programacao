@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimindo números pares</title>
+</head>
+<body>
+    <script>
+       function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+
+        var numeroInicial = parseInt(prompt("Devo começar a contagem a partir de qual número? Para que seja apresentado somente os números pares na tela?"));
+        var numeroLimite = parseInt(prompt("Até quanto eu devo mostrar os números pares?"));
+
+        while(numeroInicial <= numeroLimite) {
+            escreva(numeroInicial);
+            numeroInicial += 2;
+        }
+        
+        escreva("FIM!!!");
+    </script>
+</body>
+</html>

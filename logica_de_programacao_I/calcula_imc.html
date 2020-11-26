@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador do IMC</title>
+</head>
+<body>
+    <script>
+
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+
+        function calculaImc(peso, altura) {
+            var imc = peso / (altura * altura);
+            escreva("O IMC calculado é " + imc + ".");
+        }
+
+        function calculaSomaImc(peso1, altura1, peso2, altura2) {
+            var imc1 = peso1 / (altura1 * altura1);
+            var imc2 = peso2 / (altura2 * altura2);
+            var imcSoma = imc1 + imc2;
+            escreva("A soma dos IMC's é " + imcSoma); // Essa solução não é a solução mais correta para essa situação.
+        }
+
+        function calculaImcComRetorno(peso, altura) {
+
+            /* Poderia ser dessa maneira também
+            return peso / (altura * altura);*/
+
+            var imc = peso / (altura * altura);
+            return imc;
+        }
+        // Para calcular o IMC devemos usar a seguinte fórmula Peso / (Altura * Altura)
+
+        var pesoFlavio = 73;
+        var alturaFlavio = 1.71;
+
+        var imcFlavio = pesoFlavio / (alturaFlavio * alturaFlavio);
+
+        escreva("O IMC do Flávio é " + imcFlavio + ".");
+
+        var pesoAmigo = 68;
+        var alturaAmigo = 1.72;
+
+        var imcAmigo = pesoAmigo / (alturaAmigo * alturaAmigo);
+
+        escreva("O IMC do amigo é " + imcAmigo + ".");
+        pulaLinha();
+
+        calculaImc(pesoFlavio, alturaFlavio);
+        calculaImc(68, 1.72);
+        pulaLinha();
+
+        // Desafio somar os dois IMC's.
+        calculaSomaImc(73, 1.71, 68, 1.72);
+        pulaLinha();
+        
+        // Aqui vou calcular o IMC através de uma função que retorna o valor do IMC.
+        var imcFlavio = calculaImcComRetorno(73, 1.71);
+        var imcAmigo = calculaImcComRetorno(68, 1.72);
+        var totalImc = imcFlavio + imcAmigo; // Poderia ser também var totalImc = calculaImc(73, 1.71) + calculaImc(68, 1.72)
+
+        escreva("O IMC do Flávio é " + imcFlavio + ".");
+        escreva("O IMC do amigo é " + imcAmigo + ".");
+        escreva("A soma dos IMC's é " + totalImc + ".");
+
+    </script>
+</body>
+</html>

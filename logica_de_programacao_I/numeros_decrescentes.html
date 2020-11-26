@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números decrescentes</title>
+</head>
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+        //Nesse exercício devo imprir números em ordem decrescente na tela.
+        var numeroInicial = parseInt(prompt("Escolha um número para que eu inicie a sua decrementação:"));
+        var numeroFinal = parseInt(prompt("Escolha um número limite para que eu encerre a decrementação:"));
+
+        while(numeroInicial >= numeroFinal) {
+            escreva(numeroInicial);
+            numeroInicial--;
+        }
+        escreva("FIM!!!")
+    </script>
+</body>
+</html>

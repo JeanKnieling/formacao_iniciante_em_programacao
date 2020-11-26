@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pode ou não dirigir</title>
+</head>
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+        }
+
+        var idade = parseInt(prompt("Qual é a sua idade:"));
+        var temCarteira = prompt("Você tem carteira de motorista? Responda S ou N:");
+
+        if(idade >= 18 && temCarteira == "S" || temCarteira == "s") {
+            escreva("Você já pode dirigir!!!");
+        }else{
+            escreva("Você ainda não pode dirigir!!!");
+        }
+    </script>
+</body>
+</html>

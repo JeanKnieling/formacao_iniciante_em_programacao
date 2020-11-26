@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação com Upgrade</title>
+</head>
+<body>
+
+    <input/>
+    <button>Compare com o meu segredo</button>
+    <script>
+       /* var segredo = 5;
+        // a variável abaixo pode ter qualquer nome.
+        var input = document.querySelector("input"); // Aqui faço referência ao comando do mundo HTML que quero trazer para o mundo do JavaScript.
+        document.querySelector("button").addEventListener("click", function() {
+            if(input.value == segredo) {
+                alert("Você ACERTOU!!!");
+            } else {
+                alert("Você ERRO!!!!!!!");
+            }
+        }); */
+        // Esse código acima não tenho idea da explicação de porque está funcionando.
+
+        // No vídeo foi passado o código abaixo, por algum motivo por um tempo ele não rodou, tirei todos os (;) e coloquei novamente e le começou rodar. Vai entender!!!
+        var num_limite = parseInt(prompt("Devo sortear um número de 0 até quanto?"))
+        var segredo = Math.round(Math.random() * num_limite);
+        var input = document.querySelector("input"); // O erro era nessa variável que realmente não pode ser mudado o nome. O nome deve ser o mesmo da TAG no mundo HTML.
+        input.focus();
+        function verifica() {
+            if(input.value == segredo) {
+                alert("Você ACERTOU!!!");
+            } else {
+                alert("Você ERROU!!!!!!!");
+            }
+
+            input.value = "";
+            input.focus();
+        }
+        
+        var button = document.querySelector("button");
+        button.onclick = verifica;
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredientes para Receitas</title>
+</head>
+<body>
+    <!-- <h2>Receitas do Jean</h2> -->
+    <script>
+       /* var frutas = ["abacaxi", "banana", "melão"]
+        console.log(frutas);
+        frutas.push("abacate");
+        console.log(frutas);*/
+
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        var nome = prompt("Digite o seu nome por favor:");
+
+        document.write("<h2>Receitas do(a) " + nome + "</h2>");
+        pulaLinha();
+
+        var ingredientes = [];
+        var quantidade = parseInt(prompt("Quantos ingredientes você quer adicionar na receita?"));
+
+
+        var cont = 0;
+        while(cont < quantidade) {
+
+            var ingrediente = prompt("Digite o nome do ingrediente:");
+
+            var existe = false;
+
+            for(var pos = 0; pos < ingredientes.length; pos++) {
+                if(ingrediente == ingredientes[pos]) {
+                   existe = true;
+                   alert("Esse ingrediente já foi adicionado!!!")
+                   break;
+                }
+            }
+            if(existe == false){
+                ingredientes.push(ingrediente);
+
+                cont++
+            }
+
+    
+        }
+
+        for(pos = 0; pos < ingredientes.length; pos++) {
+            document.write("- " + ingredientes[pos]);
+            pulaLinha();
+        }
+       
+
+    </script>
+</body>
+</html>

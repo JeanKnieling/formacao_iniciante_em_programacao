@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação com mais chances</title>
+</head>
+<body>
+
+    <input/>
+    <button>Clique e descubra se acertou!!!</button>
+    <script>
+        do{
+            var numLimite = parseInt(prompt("Você quer que eu sorteie um número de 1 até quanto?"));
+
+            var quantidade = parseInt(prompt("Você quer que eu sorteie quantos números?"));
+
+            if(numLimite < quantidade || numLimite < 1 || quantidade < 1) {
+
+                alert("O número limite(primeiro digitado) deve ser maior que a quantidade de números sorteados, pois não sortearei números repetidos e não pode ser menor que 1, pois sortearei números a partir dele!!!");
+            }
+        } while(numLimite < quantidade || numLimite < 1 || quantidade < 1);
+
+        function sorteia() {
+            return Math.round(Math.random() * numLimite);
+        }
+
+        function sorteiaNumeros(quantidade) {
+
+            var segredos = []; // Aqui temos duas variáveis com o mesmo nome, mas não tem problema, pois essa só existe dentro dessa função. 
+            var numero = 1;
+            
+            while(numero <= quantidade) {
+
+                var numAleatorio = sorteia();
+
+                if(numAleatorio != 0) {
+
+                    var achou = false;
+
+                    for(var pos = 0; pos < segredos.length; pos++) {
+
+                        if(segredos[pos] == numAleatorio) {
+
+                            achou = true;
+                            break;
+                        }
+                    }
+                
+
+                    if(achou == false) {
+
+                        segredos.push(numAleatorio);
+                        numero++;
+                    }
+                }
+            }
+
+            return segredos;
+        }
+
+        var segredos = sorteiaNumeros(quantidade);
+        console.log(segredos);
+
+        var input = document.querySelector("input");
+        input.focus();
+
+        function verifica() {
+
+            var achou = false;
+            
+            for(var pos = 0; pos < segredos.length; pos++) {
+
+                if(input.value == segredos[pos]) {
+                    alert("ACERTOU!!!!");
+                    achou = true;
+                    break;
+                }
+            } 
+
+            if(achou == false) {
+                alert("EROOOOOOOOUU!!!!!");
+            }
+
+            if(achou == true || achou == false) {
+
+                document.write("Os números sorteados foram: ")
+                for(pos = 0; pos < segredos.length; pos++) {
+
+                    document.write(segredos[pos] + "... ");
+                }
+
+                document.write("FIM!!!")
+
+            }
+
+            input.value = "";
+            input.focus();
+        }
+
+        var button = document.querySelector("button");
+        button.onclick = verifica;
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+</head>
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+
+        function sorteia(n) {
+            return Math.round(Math.random() * n);
+        }
+
+        //var numeroPensado = parseInt(prompt("Você quer que o computador sorteie um número de 0 a quanto:"))); Sem a função eu faria assim.
+        var numeroPensado = sorteia(10);
+        var tentativas = parseInt(prompt("Quantas tentativas você quer que eu de a você?"));
+        
+        var contador = 1;
+        
+        while(contador <= tentativas) {
+
+            var numeroDigitado = parseInt(prompt("Tente adivinhar qual o número foi sorteado pelo computador:"));
+
+            if(numeroPensado == numeroDigitado) {
+                escreva("PARABÉNS, você acertou!!!");
+                break;
+            } else {
+                if(numeroDigitado >     numeroPensado) {
+                    alert("ERROU!!! Seu chute foi maior do que o número, sorteado pelo computador. Tentativa " + contador + "/" + tentativas + ".");
+                } else {
+                    alert("ERROU!!! Seu chute foi menor do que o número, sorteado pelo computador. Tentativa " + contador + "/" + tentativas + ".");
+                }
+                contador++;
+            }
+        }
+        
+        if(contador == tentativas + 1) {
+         escreva("Suas tentativas esgotaram, o número sorteado foi " + numeroPensado + "!!!");
+        }
+
+        escreva("FIM!!!")
+    </script>
+</body>
+</html>

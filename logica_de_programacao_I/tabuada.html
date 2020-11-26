@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+
+        var tabuada = parseInt(prompt("Digite o número de qual tabuada que você quer que eu apresente:"));
+        var multiplicador = 0;
+
+        escreva("--------------------------");
+        escreva("TABUADA DO " + tabuada);
+        escreva("--------------------------");
+
+        while(multiplicador <= 10) {
+            var resultado = tabuada * multiplicador;
+            escreva(tabuada + " x " + multiplicador + " = " + resultado);
+            multiplicador++;
+        }
+
+        escreva("--------------------------");
+        escreva("TABUADA DO " + tabuada);
+        escreva("--------------------------");
+
+        for(multiplicador = 0; multiplicador <= 10; multiplicador++) {
+            var resultado = tabuada * multiplicador;
+            escreva(tabuada + " x " + multiplicador + " = " + resultado);
+        }
+
+    </script>
+</body>
+</html>

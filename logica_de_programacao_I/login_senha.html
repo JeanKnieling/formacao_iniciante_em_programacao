@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Senha</title>
+</head>
+<body>
+    <script>
+        //Nesse exerecício eu devo criar um sistema básico de cadastrar login e senha.
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function escreva(fraseParametro) {
+            document.write(fraseParametro);
+            pulaLinha();
+        }
+
+        var loginCadastro = prompt("Digite o seu login para cadastro:");
+        var senhaCadastro = prompt("Digite a sua senha para cadastro:");
+
+        var tentativas = 1;
+
+        while(tentativas <= 3) {
+            var loginInformado = prompt("Digite o seu Login cadastrado:")
+            var senhaInformada = prompt("Digite a sua Senha:");
+
+            if(loginCadastro == loginInformado && senhaCadastro == senhaInformada) {
+                escreva("Acesso liberado. Bem vindo " + loginInformado + "!");
+                tentativas = 10;
+            } else {
+                alert("Acesso negado. Login ou Senha informados não coincidem com os cadastrados. Tente novamente! Tentativa " + tentativas + "/3.");
+                if(tentativas == 3) {
+                    escreva("Infelizmente o número de tentativas excedeu. Entre em contato com o suporte.");
+                }
+                tentativas++;
+            }
+        }
+    </script>
+</body>
+</html>
