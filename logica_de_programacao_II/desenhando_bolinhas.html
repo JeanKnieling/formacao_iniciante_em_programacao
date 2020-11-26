@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenha bolinhas ao clicar!!!</title>
+</head>
+<body>
+    <h2>Desenhe bolinhas ao clicar na tela!!!</h2>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        pincel.fillStyle = "gray";
+        pincel.fillRect(0, 0, 600, 400);
+
+        function desenhaCirculo(evento) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            pincel.fillStyle = "red";
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * Math.PI);
+            pincel.fill();
+
+            //alert(x + "," + y);
+            
+        }
+
+        
+        tela.onclick = desenhaCirculo;
+        
+    </script>
+</body>
+</html>

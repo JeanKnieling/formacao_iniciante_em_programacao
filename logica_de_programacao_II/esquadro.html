@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhando um esquadro</title>
+</head>
+<body>
+    <h2>Desenhando um esquadro!!!</h2>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        pincel.fillStyle = "purple";
+        pincel.fillRect(0, 0, 600, 400);
+
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.moveTo(50, 0);
+        pincel.lineTo(50, 400);
+        pincel.lineTo(500, 400);
+        pincel.fill();
+
+        pincel.fillStyle = "purple";
+        pincel.beginPath();
+        pincel.moveTo(105, 125);
+        pincel.lineTo(105, 350);
+        pincel.lineTo(375, 350);
+        pincel.fill();
+    </script>
+</body>
+</html>

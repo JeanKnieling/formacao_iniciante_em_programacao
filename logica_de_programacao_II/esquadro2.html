@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhando um esquadro com função</title>
+</head>
+<body>
+    <h2>Desenhando um esquadro com uma função!!!</h2>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        /*var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        function desenhaEsquadro(xa, ya, xc, yc, cor) {
+            pincel.fillStyle = cor
+            pincel.beginPath();
+            pincel.moveTo(xa, ya);
+            pincel.lineTo(xa, yc);
+            pincel.lineTo(xc, yc);
+            pincel.fill();
+
+            pincel.fillStyle = 'white'
+            pincel.beginPath();
+            pincel.moveTo((6*xa + xc)/7, (9*ya + 5*yc)/14);
+            pincel.lineTo((6*xa + xc)/7, (ya + 6*yc)/7);
+            pincel.lineTo((5*xa + 9*xc)/14, (ya + 6*yc)/7);
+            pincel.fill();
+
+        }
+
+        desenhaEsquadro(50, 50, 400, 400, 'black');*/
+
+        function desenhaEsquadro(xA, yA, xC, yC, cor) {
+            var tela = document.querySelector("canvas");
+            var pincel = tela.getContext("2d");
+
+            pincel.fillStyle = cor;
+            pincel.beginPath();
+            pincel.moveTo(xA, yA);
+            pincel.lineTo(xA, yC);
+            pincel.lineTo(xC, yC);
+            pincel.fill();
+        }
+        
+        desenhaEsquadro(50, 50, 400, 400, "red");
+        desenhaEsquadro(100, 175, 280, 350, "white");//Acabei pensando meu código um pouco diferente.
+    </script>
+</body>
+</html>

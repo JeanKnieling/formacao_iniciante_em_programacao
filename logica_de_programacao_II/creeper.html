@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhando um Creeper</title>
+</head>
+<body>
+    <h2>Desenhando um Creeper!!!</h2>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+        
+        //Fundo da tela
+        pincel.fillRect(0, 0, 600, 400);
+
+        //Cabeça
+        pincel.fillStyle = "darkgreen";
+        pincel.fillRect(125, 50, 350, 300);
+
+        //Primeiro olho
+        pincel.fillStyle = "black";
+        pincel.fillRect(173, 100, 90, 90);
+        
+        //Segundo olho
+        pincel.fillStyle = "black";
+        pincel.fillRect(333, 100, 90, 90);
+
+        //Nariz
+        pincel.fillStyle = "black";
+        pincel.fillRect(263, 190, 70, 100);
+
+        //Primeira parte da boca
+        pincel.fillStyle = "black";
+        pincel.fillRect(223, 240, 40, 110);
+
+        //Segunda parte da boca
+        pincel.fillStyle = "black";
+        pincel.fillRect(333, 240, 40, 110);
+
+
+    </script>
+</body>
+</html>

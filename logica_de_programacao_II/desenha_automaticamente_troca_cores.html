@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenha bolinhas automaticamente!!!</title>
+</head>
+<body>
+    <h2>Desenhe bolinhas enquanto o botão esquerdo do mouse<br> estiver clicado e agora com a possibilidade de trocar as cores!!!</h2>
+    <canvas width="600" height="400"></canvas>
+    <br>
+    Escolha uma cor <input type="color">
+
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        pincel.fillStyle = "gray";
+        pincel.fillRect(0, 0, 600, 400);
+
+        var mouseDesenha = false;
+        var escolhaDaCor = document.querySelector("input");
+
+        function desenhaCirculo(evento) {
+            if(mouseDesenha) {
+                var x = evento.pageX - tela.offsetLeft;
+                var y = evento.pageY - tela.offsetTop;
+
+                pincel.fillStyle = escolhaDaCor.value;
+                pincel.beginPath();
+                pincel.arc(x, y, 10, 0, 2 * Math.PI);
+                pincel.fill();
+            }
+            console.log(x + ', + y');
+            
+        }
+
+        console.log(mouseDesenha)
+
+        tela.onmousemove = desenhaCirculo;
+
+        tela.onmousedown = function() {
+            mouseDesenha = true;
+        }
+
+        tela.onmouseup = function() {
+            mouseDesenha = false;
+        }
+
+        
+    </script>
+</body>
+</html>
